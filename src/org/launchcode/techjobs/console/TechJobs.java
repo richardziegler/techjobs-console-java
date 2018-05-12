@@ -44,8 +44,13 @@ public class TechJobs {
                     System.out.println("\n*** All " + columnChoices.get(columnChoice) + " Values ***");
 
                     // Print list of skills, employers, etc
+                    ArrayList<String> items = new ArrayList<>();
                     for (String item : results) {
-                        System.out.println(item);
+                        items.add(item);
+                        Collections.sort(items);
+                    }
+                    for (int i = 0; i < items.size(); i++) {
+                        System.out.println(items.get(i));
                     }
                 }
 
@@ -59,7 +64,7 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    System.out.println("Search all fields not yet implemented.");
+                    printJobs(JobData.findByValue(searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
