@@ -114,6 +114,7 @@ public class TechJobs {
                 System.out.println("*****");
 
                 for (Map.Entry<String, String> set : someJobs.get(i).entrySet()) {
+
                     System.out.println(set.getKey() + ": " + set.getValue());
                 }
 

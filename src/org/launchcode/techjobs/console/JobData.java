@@ -72,13 +72,17 @@ public class JobData {
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
-        for (HashMap<String, String> row : allJobs) {
+            for (HashMap<String, String> row : allJobs) {
 
-            String aValue = row.get(column);
+                String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
-                jobs.add(row);
+                if (aValue.contains(value)) {
+                    jobs.add(row);
+                }
+
             }
+        if (jobs.size() == 0) {
+            System.out.println("This search returns no results.");
         }
 
         return jobs;
