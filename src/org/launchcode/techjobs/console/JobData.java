@@ -77,7 +77,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toLowerCase().contains(value.toLowerCase())) {
                 jobs.add(row);
             }
 
@@ -135,7 +135,6 @@ public class JobData {
             // Put the records into a more friendly format
             for (CSVRecord record : records) {
                 HashMap<String, String> newJob = new HashMap<>();
-
                 for (String headerLabel : headers) {
                     newJob.put(headerLabel, record.get(headerLabel));
                 }
